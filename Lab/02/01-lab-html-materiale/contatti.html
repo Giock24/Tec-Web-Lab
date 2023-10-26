@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- per definire l'ultima versione di HTML -->
+<!-- la lingua è un attributo obbligatorio -->
+<html lang="it">
+    <head>
+        <!-- title è un figlio obbligatorio dell'head-->
+        <title>Blog di Tecnologie Web - Contatti</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <h1>Blog di Tecnologie Web</h1>
+        </header>
+        <!-- per mettere i collegamenti a più pagine si usa nav-->
+        <nav>
+            <!-- non metteremo tanti tag a messi uno dopo l'altro per l'accessibilità ma useremo un lista non ordinata-->
+            <ul> <!-- unordered list-->
+                <li> <!-- list item -->
+                    <!-- index.html si riferisce alla pagina principale-->
+                    <a href="index.html">Home</a>
+                </li> <li><a href="archivio.html">Archivio</a></li> <li><a href="contatti.html">Contatti</a></li> <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Autori del Blog</h2>
+            <table>
+                <tr>
+                    <th id="autore" scope="col">Autore</th> <th id="email" scope="col">Email</th> <th id="argomenti" scope="col">Argomenti</th>
+                </tr>
+                <tr>
+                    <th id="gino" scope="row">Gino Pino</th> <td headers="email gino"><a href="mailto:ginopino@logtw.com">ginopino@blogtw.com</a></td><td headers="argomenti gino"><abbr title="HyperText Markup Launguage">HTML</abbr>, <abbr title="Cascading Style Sheet">CSS</abbr>, Javascript</td>
+                    <!-- negli headers si mettono gli id a cui fanno riferimento riga colonna-->
+                </tr>
+                <tr>
+                    <th id="cippa" scope="row">Cippa Lippa</th><td headers="email cippa"><a href="mailto:cippalippa@blogtw.com">cippalippa@blogtw.com</a></td><td headers="argomenti cippa"><abbr title="PHP HyperText Prepocessor">PHP</abbr></td>
+                </tr>
+            </table>
+        </main> <aside> <!-- viene messo difianco per non avere problemi con il css in futuro-->
+            <section>
+                <h2>Post Popolari</h2>
+                <ul>
+                    <li>
+                        <img src="img/html5-js-css3.png" alt=""/>
+                        <a href="#">Intro alle tecnologie Web Client Side</a>
+                    </li>
+                    <li>
+                        <img src="img/php.png" alt=""/>
+                        <a href="#">Intro alle tecnologie Web Server Side</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Categorie</h2>
+                <ul>
+                    <li><a href="#"><abbr title="HyperText Markup Language">HTML</abbr></a></li>
+                    <li><a href="#"><abbr title="Cascading Style Sheet">CSS</abbr></a></li>
+                    <li><a href="#"><abbr title="PHP HyperText Preprocessor">PHP</abbr></a></li>
+                    <li><a href="#">Javascript</a></li>
+                    <li><a href="#">Apache</a></li>
+                </ul>
+            </section>
+        </aside>
+        <footer>
+            <p>Tecnologie Web - A.A. 2023/2024</p>
+        </footer>
+    </body>
+</html>
