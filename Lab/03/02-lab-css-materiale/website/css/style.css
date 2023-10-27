@@ -119,9 +119,8 @@ article>footer>a:hover {
 aside {
     background-color: #fff;
     border: 1px solid #cacaca;
-    margin: 0;
     box-sizing: border-box;
-    margin: 0 0 15px;
+    margin: 0 5% 15px;
 }
 
 aside>section {
@@ -178,11 +177,26 @@ body>footer {
     }
 
     nav ul li {
-        width: 19%;
+        width: 20%;
     }
 
     nav ul li:not(:last-child) {
-        margin-right: 8%;
+        margin-right: 6%;
+    }
+
+    main, aside {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    main {
+        width: 50%;
+        margin: 20px 5% 0 10%;
+    }
+
+    aside {
+        width: 25%;
+        margin: 20px 10% 0 0;
     }
     
 }
