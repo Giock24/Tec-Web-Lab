@@ -67,6 +67,26 @@ main {
     margin: 20px 5% 0;
 }
 
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    padding-top: 20px;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px, 0;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 article header img {
     max-height: 200px;
     max-width: 100%;
@@ -75,17 +95,17 @@ article header img {
     margin-right: auto;
 }
 
-article {
+article, main>section {
     /*quando i valori rosso, verde e blu sono uguali
         esempio: FF FF FF si può usare una forma più
         contratta mettendo un solo valore per rosso, verde e blue*/
     background-color: #fff;
     border: 1px solid #cacaca;
     margin-bottom: 20px;
-
+    padding: 5px 10px;
 }
 
-article>header>h2, article>header>p {
+article>header>h2, article>header>p, main>section>h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 0 5%;
     text-align: left;
