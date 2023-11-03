@@ -1,5 +1,6 @@
 body {
     background-color: #e4e4e4;
+    /*min-height: 100vh;*/
 }
 
 body, header, h1, h2, ul, footer {
@@ -122,7 +123,7 @@ article>footer {
     padding: 20px 5% 5%;
 }
 
-article>footer>a {
+article>footer>a, form input[type="submit"] {
     background-color: rgb(221, 221, 221);
     text-decoration: none;
     border-radius: 5px;
@@ -132,8 +133,38 @@ article>footer>a {
     font-weight: bold; /*serve per mettere in grassetto il testo*/
 }
 
-article>footer>a:hover {
+article>footer>a:hover, form input[type="submit"]:hover {
     color: rgb(219,69,83);
+    cursor: pointer;
+    /*per far cambiare l'icona del cursore si usa cursor*/
+}
+
+form ul {
+    list-style-type: none;
+    width: 80%;
+    margin: 20px 10% 0;
+}
+
+form li{
+    margin-bottom: 20px;
+}
+
+form label {
+    display: inline-block;
+    width: 40%;
+}
+
+form li:last-child {
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+
+/*col not applichi il css a tutti gli elementi
+  tranne l'input di tipo submit*/
+form input:not([type="submit"]) {
+    width: 50%;
+    box-sizing: border-box;
 }
 
 aside {
@@ -187,9 +218,22 @@ aside li>a:hover {
     text-decoration: underline; /*per mettere la sottolineatura*/
 }
 
+aside{
+    margin-bottom: 20%;
+}
+
+body>footer {
+    bottom: 0;
+}
+
 body>footer {
     font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100;
 }
+
 
 @media  screen and (min-width: 768px){
     nav {
@@ -212,6 +256,10 @@ body>footer {
     main {
         width: 50%;
         margin: 20px 5% 0 10%;
+    }
+
+    main>article:last-child{
+        margin-bottom: 25%;
     }
 
     aside {
