@@ -7,9 +7,9 @@
             </tr>
             <?php foreach($templateParams["autori"] as $autore): ?>
                 <tr>
-                    <th id="1"><?php echo $autore["nome"]; ?></th>
-                    <td headers="email 1"><?php echo $autore["username"];?></td>
-                    <td headers="argomenti 1"><?php echo $autore["argomenti"]; ?></td>
+                    <th id="<?php echo getIDFromName($autore["nome"]); ?>"><?php echo $autore["nome"]; ?></th>
+                    <td headers="email <?php echo getIDFromName($autore["nome"]); ?>"><?php echo $autore["username"];?></td>
+                    <td headers="argomenti <?php echo getIDFromName($autore["nome"]); ?>"><?php echo $autore["argomenti"]; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
