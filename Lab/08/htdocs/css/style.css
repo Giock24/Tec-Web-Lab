@@ -1,0 +1,267 @@
+body {
+    background-color: #e4e4e4;
+    /*min-height: 100vh;*/
+}
+
+body, header, h1, h2, ul, footer {
+    margin: 0px;
+    padding: 0px;
+}
+
+body > header , body > footer {
+    background-color: rgb(54,54,54);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+body > header > h1, body > footer > p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav {
+    /**/
+    margin: 0 5%;
+}
+
+nav ul {
+    /* con ul discendente di nav (nav ul) prendiamo anche tutti i figli diretti*/
+    /*mettendo none in list-item togliamo i pallino dalle unordered list*/
+    list-style: none;
+}
+
+/*avendo messo i li tutti in una linea
+    grz a display li considera elementi di blocco
+    ma li mette uno accanto all'altro*/
+nav ul li {
+    display: inline-block;
+    width: 45%;
+    background-color: rgb(54,54,54);
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+/* si può usare odd per specificare tutti i figli pari
+    altrimenti even per quelli dispari*/
+nav ul li:nth-child(odd){
+    margin-right: 10%;
+}
+
+nav ul li a {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    /*text deco - none, ci permette di rimuovere la sottolineatura
+        dai link*/
+    padding: 5px 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li a:hover{
+    color: rgb(219,69,83);
+}
+
+main {
+    margin: 20px 5% 0;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    padding-top: 20px;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px, 0;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+article header img {
+    max-height: 200px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article, main>section {
+    /*quando i valori rosso, verde e blu sono uguali
+        esempio: FF FF FF si può usare una forma più
+        contratta mettendo un solo valore per rosso, verde e blue*/
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+
+article>header>h2, article>header>p, main>section>h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0 5%;
+    text-align: left;
+}
+
+article>section {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    padding: 0 5%;
+}
+
+article>footer {
+    text-align: right;
+    padding: 20px 5% 5%;
+}
+
+article>footer>a, form input[type="submit"] {
+    background-color: rgb(221, 221, 221);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold; /*serve per mettere in grassetto il testo*/
+}
+
+article>footer>a:hover, form input[type="submit"]:hover {
+    color: rgb(219,69,83);
+    cursor: pointer;
+    /*per far cambiare l'icona del cursore si usa cursor*/
+}
+
+form ul {
+    list-style-type: none;
+    width: 80%;
+    margin: 20px 10% 0;
+}
+
+form li{
+    margin-bottom: 20px;
+}
+
+form label {
+    display: inline-block;
+    width: 40%;
+}
+
+form li:last-child {
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+
+/*col not applichi il css a tutti gli elementi
+  tranne l'input di tipo submit*/
+form input:not([type="submit"]) {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+aside {
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    box-sizing: border-box;
+    margin: 0 5% 15px;
+}
+
+aside>section {
+    padding: 20px 5%;
+}
+
+aside>section>h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+aside>section>ul {
+    /* per togliere i puntini nei item della lista*/
+    list-style-type: none;
+}
+
+/*tutti gli li discendenti di aside*/
+aside li {
+    margin-bottom: 10px;
+}
+
+aside li>img {
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+aside li>a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black
+}
+
+/*se venisse messo prima il rosso, si vedrebbe solo il viola
+  e non si modificherebbe in rosso per via della priorità*/
+
+aside li>a:visited {
+    color: purple;
+}
+
+aside li>a:hover {
+    color: rgb(219,69,83);
+    text-decoration: underline; /*per mettere la sottolineatura*/
+}
+
+aside{
+    margin-bottom: 20%;
+}
+
+body>footer {
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+
+@media  screen and (min-width: 768px){
+    nav {
+        margin: 0 10%;
+    }
+
+    nav ul li {
+        width: 20%;
+    }
+
+    nav ul li:not(:last-child) {
+        margin-right: 6%;
+    }
+
+    main, aside {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    main {
+        width: 50%;
+        margin: 20px 5% 0 10%;
+    }
+
+    main>article:last-child{
+        margin-bottom: 25%;
+    }
+
+    aside {
+        width: 25%;
+        margin: 20px 10% 0 0;
+    }
+    
+}
+
