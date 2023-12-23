@@ -2,13 +2,13 @@
     <h2>Esercizio PHP</h2>
     <ul>
         <li>
-            <label for="letter-a">A:</label><input type="text" id="letter-a" name="letter-a" />
+            <label for="letter-a">A: </label><input type="text" id="letter-a" name="letter-a" />
         </li>
         <li>
-            <label for="letter-b">B:</label><input type="text" id="letter-b" name="letter-b" />
+            <label for="letter-b">B: </label><input type="text" id="letter-b" name="letter-b" />
         </li>
         <li>
-            <label for="letter-c">C:</label><input type="text" id="letter-c" name="letter-c" />
+            <label for="letter-o">O: </label><input type="text" id="letter-o" name="letter-o" />
         </li>
         <li>
             <input type="submit" name="submit" value="Invia" />
@@ -28,27 +28,17 @@
 
     if ($db->connect_error) {
         // The die() function in PHP is used to print 
-        //a message and terminate the current script execution.
+        // a message and terminate the current script execution.
         die("Connection Failed: " . $db->connect_error);
     } else {
         echo "Connection Success \n";
+
         // isset è una funzione per farti capire se è stata settata quella variabili nell'array
-        /*
-        if (isset($_GET['letter-a'])) {
-            $A = transformToInt($_GET['letter-a']);
-        }
-        */
-
-        //$letters = array($A, $B, $C);
-
-        // Controllo che le variabili passate siano NON nulle
-        // e maggiori di zero
-        if (isset($_GET['letter-a']) && isset($_GET['letter-b']) && isset($_GET['letter-c'])) {
+        if (isset($_GET['letter-a']) && isset($_GET['letter-b']) && isset($_GET['letter-o'])) {
             $A = transformToInt($_GET['letter-a']);
             $B = transformToInt($_GET['letter-b']);
             $allnumber = array($A, $B);
-            $C = $_GET['letter-c']; // da fare il check se viene passato un numero
-            //echo "Hai inserito una i oppure u: " . var_dump(checkLetter($C));
+            $O = $_GET['letter-o'];
 
             $firstset = array();
             $secondset = array();
@@ -56,10 +46,11 @@
 
             $finalset = array();
 
-            if ( checkNumber($_GET['letter-a'], $_GET['letter-b']) && checkLetter($C) ) {
+            // Controllo che le variabili passate siano NON nulle
+            // e maggiori di zero
+            if ( checkNumber($_GET['letter-a'], $_GET['letter-b']) && checkLetter($O) ) {
                 
                 for ($num = 0; $num < sizeof($allnumber, 0); $num++) {
-                    //var_dump($allnumber[$num]);
                     $exist = "SELECT valore FROM insiemi WHERE insieme=?";
                 
                     $stmt = $db->prepare($exist);
@@ -71,41 +62,24 @@
 
                     $counter = 0;
                     foreach($check as $elem):
-                        //var_dump($elem["valore"]);
                         $allset[$num][$counter] = $elem["valore"];
                         $counter++;
                     endforeach;
                 }
                 
-                //var_dump($allset);
-                //echo var_dump($check[0]["COUNT(insieme)"] > 0);
-                switch($C) {
+                switch($O) {
                     case "i":
                         $finalset = array_intersect($allset[0], $allset[1]);
                         break;
                     case "u":
-                        // sizeof(array, mode)
-                        // array	Required. Specifies the array
-                        // mode	Optional. Specifies the mode. Possible values:
-                        // 0 - Default. Does not count all elements of multidimensional arrays
-                        // 1 - Counts the array recursively (counts all the elements of multidimensional arrays)
-                        //$lenght = sizeof($allset, 1);
-                        //$counter = 0;
-                        //echo "Lunghezza della allset: " . $lenght;
-                        /*
-                        foreach($allset as $vet):
-                            foreach($vet as $elem):
-                                //var_dump($elem);
-                                $finalset[$counter] = $elem;
-                                $counter++;
-                            endforeach;
-                        endforeach;
-                        */
                         $finalset = array_merge($allset[0], $allset[1]);
                         break;
                 }
 
+                // quello che verrà mostrato nella pagina web è l'array nuovo
+                // con i valori dati dell'unione / intersezione degli insiemi
                 echo " <- valori set finale" . var_dump($finalset);
+
                 if (sizeof($finalset, 0) > 0) {
                     // max id of set ----------------------
                     $stmt = $db->prepare("SELECT MAX(insieme) AS maxid FROM insiemi");
