@@ -72,7 +72,8 @@
                         $finalset = array_intersect($allset[0], $allset[1]);
                         break;
                     case "u":
-                        $finalset = array_merge($allset[0], $allset[1]);
+                        // merge unisce array ma mantiene i valori duplicati, unique li rimuove
+                        $finalset = array_unique(array_merge($allset[0], $allset[1]));
                         break;
                 }
 
@@ -92,7 +93,7 @@
 
                     foreach ($finalset as $elem):
                         // creating new id --------------------
-                        $stmt = $db->prepare("SELECT COUNT(id) AS id FROM insiemi");
+                        $stmt = $db->prepare("SELECT MAX(id) AS id FROM insiemi");
                         $stmt->execute();
                         $result = $stmt->get_result();
 
