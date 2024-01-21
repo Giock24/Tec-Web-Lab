@@ -4,11 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css"/>
 </head>
 <body>
+    <h1>Aquisto di libri</h1>
     <form action="#" method="get">
         <fieldset>
-            <legend>Acquisto di libri</legend>
+            <legend>Libro</legend>
             <ul>
                 <li>
                     <label for="titoli">Selezione dei titoli</label><br/>
@@ -28,13 +30,16 @@
                     <input type="radio" id="elettronico" name="formato"/>
                     <label for="elettronico">formato elettronico</label><br/>
                 </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Dati anagrafici e consegna</legend>
+            <ul>
                 <li>
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome"><br/>
-
                     <label for="cognome">Cognome:</label>
                     <input type="text" id="cognome"><br/>
-                    
                     <label for="via">Via:</label>
                     <input type="text" id="via"><br/>
                     <label for="numero-civico">Numero Civico:</label>
@@ -53,11 +58,9 @@
                     <label for="consegna">Pagamento alla consegna:</label>
                     <input type="checkbox" id="consegna"><br/>
                 </li>
-                <li>
-                    <button type="submit">Invia</button> <button type="reset">Annulla</button>
-                </li>
             </ul>
         </fieldset>
+        <button type="submit">Invia</button> <button type="reset">Annulla</button>
     </form>
 </body>
 </html>

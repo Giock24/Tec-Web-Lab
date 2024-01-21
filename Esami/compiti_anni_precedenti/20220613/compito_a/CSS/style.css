@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+legend {
+    background-color: orange;
+    color: darkred;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px -5px 10px grey ;
+    /*il primo si riferisce x, il secondo le y il terzo alla sfocatura*/
+}
+
+form {
+    background-color: yellow;
+    border: solid 2px orange;
+    border-radius: 2px;
+    box-shadow: 10px -10px 2px gray ;
+}
+
+label {
+    color: black;
+    font-size: 120%;
+}
+
+button {
+    background-color: orange;
+    color: black;
+    font-size: 120%;
+    border-radius: 2px;
+}
+
+fieldset {
+    border: solid 1px darkred;
+}
+
