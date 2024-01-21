@@ -10,7 +10,7 @@ let oldPosition;
 
 // per settare un nuovo attributo al elemento
 allImages[currentPosition].setAttribute("class", "current");
-
+console.log(allImages);
 for (let i = 2; i < allImages.length; i++) {
     allImages[i].style.display = "none";
 }
