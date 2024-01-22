@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+    // RICORDATI DI FAR PARTIRE L'HTML DA LOCALHOST
+    // SE NO NON FUNZIONA LA PARTE DI XMLHttpRequest();
+    
     let form = document.getElementsByTagName("form")[0];
     let array_span = document.getElementsByTagName("span");
     let button = document.getElementsByTagName("button")[1];

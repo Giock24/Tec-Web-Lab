@@ -1,4 +1,5 @@
 <?php
+
     //echo "Michelis";
     $array = array("prova", "prova2");
     // json encode serve per creare un JSON partendo da un'array
