@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, tr, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Appelli d'esame</caption>
+        <tr>
+            <th id="giorno" scope="col">
+                Giorno
+            </th>
+            <th id="aula" scope="col">
+                Aula
+            </th>
+            <th id="9-10" scope="col">
+                9:00 - 10:00
+            </th>
+            <th id="10-11" scope="col">
+                10:00 - 11:00
+            </th>
+            <th id="11-12" scope="col">
+                11:00 - 12:00
+            </th>
+        </tr>
+        <tr>
+            <th rowspan="2" id="lunedì" headers="giorno" scope="rowgroup">
+                Lunedì
+            </th>
+            <th id="aula2.9" headers="lunedì aula" scope="row">
+                Aula 2.9
+            </th>
+            <td colspan="2" headers="aula2.9 lunedì 9-10 10-11">
+               Sistemi Operativi 
+            </td>
+            <td headers="aula2.9 lunedì 11-12">
+                Informatica e diritto
+            </td>
+        </tr>
+        <tr>
+            <th id="Lab3.1" headers="lunedì aula" scope="row">
+                Laboratorio 3.1
+            </th>
+            <td headers="Lab3.1 lunedì 9-10">
+                Reti di comunicazione
+            </td>
+            <td colspan="2" headers="Lab3.1 lunedì 10-11 11-12">
+                Basi di dati
+            </td>
+        </tr>
+        <tr>
+           <th rowspan="2" id="martedì" headers="giorno" scope="rowgroup">
+                Martedì
+           </th>
+           <th id="aula2.5" headers="martedì aula" scope="row">
+                Aula 2.5
+           </th>
+           <td headers="aula2.5 martedì 9-10">
+                Programmazione
+           </td>
+           <td headers="aula2.5 martedì 10-11">
+                Analisi Matematica
+           </td>
+           <td headers="aula2.5 martedì 11-12">
+                Algoritmi e strutture dati
+           </td>
+        </tr>
+        <tr>
+            <th id="Lab3.3" headers="aula martedì" scope="row">
+                Laboratorio 3.3
+            </th>
+            <td colspan="2" headers="Lab3.3 martedì 9-10 10-11">
+                Tecnologie Web
+            </td>
+            <td headers="Lab3.3 martedì 11-12">
+                Programmazione ad oggetti
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
