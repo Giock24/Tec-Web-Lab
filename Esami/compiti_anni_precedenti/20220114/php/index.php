@@ -63,8 +63,23 @@
                       die("Connection failed: " . $conn->connect_error);
                     } else {
                         //echo "Connected successfully";
+                        $query = "SELECT MAX(idcittadino) AS max_id FROM cittadino";
+
+                        // prepare and bind
+                        $stmt = $conn->prepare($query);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        //var_dump($result->fetch_all(MYSQLI_ASSOC)[0]["max_id"]);
+                        $new_id = $result->fetch_all(MYSQLI_ASSOC)[0]["max_id"] + 1;
+
                         $query = "INSERT INTO cittadino (idcittadino, nome, cognome, codicefiscale, datanascita, sesso)
                         VALUES (?,?,?,?,?,?)";
+                        $stmt = $conn->prepare($query);
+                        $stmt->bind_param("isssss", $new_id, $nome, $cognome, $cf, $data, $sesso);
+                        $stmt->execute();
+
+                        var_dump("Nel DB è appena stato inserito/a: $nome $cognome $cf $data $sesso");
+                        
                     }
                 }
 
@@ -91,7 +106,7 @@
             //echo "entro primo IF";
             //var_dump(strlen($array_value[0]));
             if (strlen($array_value[0]) == 4 && strlen($array_value[1])  == 2 && strlen($array_value[2])  == 2) {
-                echo "Data Valida!";
+                //echo "Data Valida!";
                 return true;
             } else {
                 echo "Data NON Valida!!!";
