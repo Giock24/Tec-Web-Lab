@@ -6,12 +6,16 @@
     <title>Document</title>
     <?php
         require_once("./garde_database.php");
-        if(!isset($_COOKIE["showTable"])){
-            $_COOKIE["showTable"]=0;
+
+        session_start();
+        if(!isset($_SESSION["showTable"])){
+            $_SESSION["showTable"]=0;
         }
-        if(!isset($_COOKIE["citizens"])){
-            $_COOKIE["citizens"]=[];
+        if(!isset($_SESSION["citizens"])){
+            $_SESSION["citizens"]=[];
         }
+
+        var_dump(check_date($_POST["data_di_nascita"]));
 
         if(
             isset($_POST["nome"]) &&
@@ -20,7 +24,7 @@
             isset($_POST["data_di_nascita"]) &&
             isset($_POST["sesso"])
         ){
-            $_COOKIE["showTable"]=0;
+            $_SESSION["showTable"]=0;
             $nome = $_POST["nome"];
             $cognome = $_POST["cognome"];
             $codice_fiscale = $_POST["codice_fiscale"];
@@ -34,18 +38,17 @@
                 ($sesso=="M" || $sesso=="S" || $sesso=="A")
             ){
                 $dbh->addCitizen($nome,$cognome,$codice_fiscale,$data_di_nascita,$sesso);
-                $_COOKIE["showTable"] = 0;
-                $_COOKIE["citizens"] = "citizen add";
+                $_SESSION["showTable"] = 0;
+                $_SESSION["citizens"] = "citizen add";
             }
-        } else if (isset($_POST["id"])){
-            $_COOKIE["showTable"]=1;
-            $_COOKIE["citizens"]=$dbh->getCitizen($_POST["id"]);
+        } else if (isset($_POST["id"]) && $_POST["id"] != ""){
+            $_SESSION["showTable"]=1;
+            $_SESSION["citizens"]=$dbh->getCitizen($_POST["id"]);
         } else {
-            $_COOKIE["showTable"]=1;
-            $_COOKIE["citizens"]=$dbh->getAllCitizen();
-        }
-    
-        var_dump($_COOKIE["citizens"])
+            $_SESSION["showTable"]=1;
+            $_SESSION["citizens"]=$dbh->getAllCitizen();
+        };
+;
     ?>
 </head>
 <body>
@@ -57,13 +60,13 @@
         <input type="submit" value="Submit">
     </form>
 
-    <?php if($_COOKIE["showTable"]==1):    ?>
+    <?php if($_SESSION["showTable"]==1):    ?>
         <table>
             <caption>Cittadini</caption>
             <tr>
                 <th id="Nome" scopre="col">Nome</th>
             </tr>
-            <?php foreach($_COOKIE["citizens"] as $citizen): ?>
+            <?php foreach($_SESSION["citizens"] as $citizen): ?>
             <tr>
                 <td headers="Nome"><?php echo $citizen["nome"]?></td>
             <tr>

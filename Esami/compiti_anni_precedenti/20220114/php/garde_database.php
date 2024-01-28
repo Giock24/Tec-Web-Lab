@@ -32,8 +32,28 @@
             $result = $stmt->get_result();
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function checkDate($string){
+            return true;
+        }
     }
 
     $dbh = new DatabaseHelper("localhost","root","","20220114");
 
+    function check_date($string){
+        $arr = explode('-',$string);
+        if(sizeof($arr)==3){
+            if(
+                strlen($arr[0]) == 4 &&
+                strlen($arr[1]) == 2 &&
+                strlen($arr[2]) == 2
+            ){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 ?>
