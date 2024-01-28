@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <th id="inquadramento" scope="col">inquadramento</th>
+                <th id="personale" scope="col">personale</th>
+                <th id="unita_di_personale" scope="col">unità di personale</th>
+            </tr>
+            <tr>
+                <th id="donne" headers="inquadramento" scope="rowgroup" rowspan="2">donne</th>
+                <th id="docenti_donne" headers="donne personale" scope="row">docenti</th>
+                <td headers="donne docenti_donne unita_di_personale">1.782</td>
+            </tr>
+            <tr>
+                <th id="amministrativi_donne" headers="donne personale" scope="row">amministrativi</th>
+                <td headers="donne amministrativi_donne unita_di_personale">1.012</td>
+            </tr>
+            <tr>
+                <th id="uomini" headers="inquadramento" scope="rowgroup" rowspan="2">uomini</th>
+                <th id="docenti_uomini" headers="personale uomini" scope="row">docenti</th>
+                <td headers="uomini docenti_uomini unita_di_personale">1.497</td>
+            </tr>
+            <tr>
+                <th id="amministrativi_uomini" headers="personale uomini" scope="row">amministrativi</th>
+                <td headers="uomini amministrativi_uomini unita_di_personale">1.246</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
