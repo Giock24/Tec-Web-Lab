@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     
     let createPokemonList = () => {
         let main = document.getElementsByTagName("main")[0];
-        console.log(main);
-        allPokemon.forEach(pokemon => {
+        main.innerHTML="";
+        allPokemon.forEach((pokemon,index) => {
             let div = document.createElement("div");
             let id = document.createElement("p");
             id.innerHTML = pokemon.id;
@@ -27,9 +27,30 @@ document.addEventListener("DOMContentLoaded",()=>{
                 li.innerHTML = element;
                 ul.appendChild(li);
             })
+            let up = document.createElement("button");
+            up.addEventListener("click", () => {
+                allPokemon[index] = allPokemon[index-1];
+                allPokemon[index-1] = pokemon;
+                createPokemonList();
+            })
+            //up.onclick= ()=>console.log("e");
+            up.innerHTML="up";
+            let down = document.createElement("button");
+            down.addEventListener("click", () => {
+                allPokemon[index] = allPokemon[index+1];
+                allPokemon[index+1] = pokemon;
+                createPokemonList();
+            })
+            down.innerHTML="down";
             div.appendChild(id);
             div.appendChild(name);
             div.appendChild(ul);
+            if(index!=0){
+                div.appendChild(up);
+            }
+            if(index != allPokemon.length-1){
+                div.appendChild(down);
+            }
             main.appendChild(div);
         });
     }
