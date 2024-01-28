@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libri</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>libro</legend>
+            <ul>
+                <li>
+                    <label for="Libro">tipo libro</label>
+                    <select id="Libro">
+                        <option value="libro1">Sistemi operativi. Concetti ed esempio, di Abraham Silberschatz et al.</option>
+                        <option value="libro2">libro2</option>
+                        <option value="libro3">libro3</option>
+                    </select>
+                </li>
+                <li>
+                    <fieldset>
+                        <legend>tipo</legend>
+                        <input type="radio" id="copertina_flessibile" name="formato" value="copertina flessibile">
+                        <label for="copertina_flessibile">copertina flessibile</label><br>
+                        <input type="radio" id="css" name="formato" value="CSS">
+                        <label for="css">copertina rigida</label><br>
+                        <input type="radio" id="formato_digitale" name="formato" value="formato digitale">
+                        <label for="formato_digitale">formato digitale</label>
+                    </fieldset>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Dati utente</legend>
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="Cognome">Cognome:</label><br>
+            <input type="text" id="Cognome" name="Cognome"><br>
+            <label for="Via">Via:</label><br>
+            <input type="text" id="Via" name="Via"><br>
+            <label for="Civico">Civico:</label><br>
+            <input type="number" id="Civico" name="Civico"><br>
+            <fieldset>
+                <legend>orario flessibile</legend>
+                <input type="radio" id="si" name="orario_flessibile" value="si">
+                <label for="si">si</label><br>
+                <input type="radio" id="no" name="orario_flessibile" value="no">
+                <label for="no">no</label><br>
+            </fieldset>
+            <input type="checkbox" id="Pagamento_alla_consegna" name="Pagamento_alla_consegna" value="Bike">
+            <label for="Pagamento_alla_consegna"> pagamento alla consegna </label>
+        </fieldset>
+        <label for="invio" hidden>invio</label><br>
+        <input type="submit" id="invio" value="invio">
+
+        <label for="elimina" hidden> elimina </label>
+        <input id="elimina" type="reset"/>
+    </form>
+</body>
+</html>

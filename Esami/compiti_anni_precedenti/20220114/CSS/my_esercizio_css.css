@@ -1,0 +1,41 @@
+body {
+    font-family: Arial;
+    font-size: 100%;
+}
+
+header, footer,nav {
+    background-color: lightgreen;
+    border: 2px darkgreen solid;
+    border-style: dotted;
+    box-shadow: 5px 5px 5px grey;
+}
+
+header, footer {
+    text-align: center
+}
+
+header{
+    margin-bottom: 10px;
+}
+
+section {
+    width: 75%;
+}
+
+footer {
+    padding: 10px
+}
+
+nav {
+    float: right;
+    width: 20%;
+}
+
+header h1 {
+    font-weight: bolder;
+    color: darkgreen;   
+}
+
+nav {
+    background-color: lightgreen;
+}
