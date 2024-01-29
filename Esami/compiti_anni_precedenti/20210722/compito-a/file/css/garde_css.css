@@ -1,0 +1,46 @@
+body {
+    font-family: Arial;
+    font-size: 100%;
+}
+
+header {
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+}
+
+fieldset {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 27px;
+}
+
+section {
+    width:100%;
+    /*padding: 0px 10px 0px 10px*/
+}
+
+input[type="text"],input[type="number"],input[type="color"],input[type="email"],select {
+    width:100%;
+    border: 2px solid purple;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"],input[type="reset"]{
+    width:48%;
+    margin: 10px 5px;
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,input[type="reset"]:hover{
+    background-color: pink;
+    color: purple;
+    font-weight:bold;
+}
