@@ -9,5 +9,5 @@
     // get prende i valori passati dal JS passato nella variabile q
     var_dump($_GET['q']);
 
-    // per passare la risposta da JS a PHP scrivi echo "valore che vuoi passare"
+    // per passare la risposta da PHP a JS scrivi echo "valore che vuoi passare"
 ?>
