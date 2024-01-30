@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Esame</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Anagrafica</legend>
+            <label for="fnome">Nome:</label><br/>
+            <input id="fnome" name="fnome" type="text"/><br/>
+            <label for="fcognome">Cognome:</label><br/>
+            <input id="fcognome" name="fcognome" type="text"/><br/>
+            <label for="fanno">anno di nascita:</label><br/>
+            <input id="fanno" name="fanno" type="date"/><br/>
+        </fieldset>
+        <fieldset>
+            <legend>Prenotazione</legend>
+            <fieldset>
+                <legend>prestazione</legend>
+                <input type="checkbox" id="tampone" name="prestazione" value="tampone">
+                <label for="tampone">tampone</label>
+                <input type="checkbox" id="sierologico" name="prestazione" value="sierologico">
+                <label for="sierologico">sierologico</label>
+                <input type="checkbox" id="vaccino" name="prestazione" value="vaccino">
+                <label for="vaccino">vaccino</label>
+            </fieldset>
+            <fieldset>
+                <legend>luogo</legend>
+                <input type="radio" id="farmacia" name="luogo" value="farmacia">
+                <label for="farmacia">farmacia</label>
+                <input type="radio" id="medico_di_famiglia" name="luogo" value="medico_di_famiglia">
+                <label for="medico_di_famiglia">medico di famiglia</label>
+                <input type="radio" id="ambulatorio" name="luogo" value="ambulatorio">
+                <label for="ambulatorio">ambulatorio</label>
+            </fieldset>
+        </fieldset>
+        <label for="cancella" hidden>cancella</label>
+        <input type="reset" id="cancella" value="cancella"/>
+        <label for="submit" hidden>submit</label>
+        <input type="submit" id="submit" value="submit">
+    </form>
+</body>
+</html>
