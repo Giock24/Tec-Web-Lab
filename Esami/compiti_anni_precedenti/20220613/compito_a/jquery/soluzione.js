@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const rows = 9;
     const columns = 9;
     let my_table = new Map();
+    let your_id;
     
     b_new.addEventListener("click", function() {
         /*
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let json_response = JSON.parse(this.responseText);
             
             let status = json_response.statoiniziale;
+            your_id = json_response.id;
 
             //console.log(status[5]);
             let counter = 0;
@@ -51,9 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             generate_table();
-            console.log(my_table);
-
+            //console.log(my_table);
             form.removeAttribute("hidden");
+            button.removeAttribute("hidden");
+
             form.setAttribute("name","myForm");
             function handleForm(event) { event.preventDefault(); } 
             form.addEventListener('submit', handleForm);
@@ -64,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let my_value = Number(document.forms["myForm"]["valore"].value);
                 if ((row >= 1 && row <= rows) && (column >= 1 && column <= columns)) {
                     if ( my_value >= 0 && my_value <= 9) {
-                        console.log(typeof my_value);
+                        //console.log(typeof my_value);
                         my_table.set(`${row} ${column}`, my_value);
                         //console.log(my_table);
                         generate_table();
@@ -72,11 +75,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            //form.removeAttribute("hidden");
-            //form.setAttribute("name","myForm");
-            //add.addEventListener("click", function () {
-            //    //console.log(document.forms["myForm"]["riga"].value);
-            //});
+            button.addEventListener("click", function () {
+                // List all keys
+                str = "evaluate"
+                let text = "";
+                for (const x of my_table.values()) {
+                  text += x;
+                }
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                };
+                xmlhttp.open("GET", "../php/index.php?id=" + your_id + "&statonuovo=" + text + "&message=" + str, true);
+                xmlhttp.send();
+            });
 
           }
         };
@@ -101,4 +116,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
         table.innerHTML = content_table;
     }
+
 });

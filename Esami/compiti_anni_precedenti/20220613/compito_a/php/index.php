@@ -24,10 +24,19 @@
             $result = $stmt->get_result();
             $status = $result->fetch_all(MYSQLI_ASSOC)[0];
 
+            // qui setto nel cookie l'id
+            setcookie("id", $status["id"]);
+
             // json encode serve per creare un JSON partendo da un'array
             $json_status = json_encode($status);
+
             // qui mando al JS il JSON creato
             echo "".$json_status;
+        } else {
+            if ($_COOKIE["id"] == $_GET["id"]) {
+                echo "".$_GET["statonuovo"];
+            }
+
         }
     }
 
